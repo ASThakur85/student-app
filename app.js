@@ -194,6 +194,6 @@
    * Initial Load
    ***************************************/
   document.addEventListener("DOMContentLoaded", () => {
-    const rollNo = prompt("Enter Student Roll No:");
+    const rollNo = prompt("Enter Student Roll No (e.g., 12345, 12346):");
     if (rollNo) loadStudentData(rollNo);
   });
