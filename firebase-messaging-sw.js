@@ -1,8 +1,6 @@
-// firebase-messaging-sw.js
 importScripts("https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compact.js");
 importScripts("https://www.gstatic.com/firebasejs/12.0.0/firebase-messaging-compact.js");
 
-// Initialize Firebase inside the service worker
 firebase.initializeApp({
   apiKey: "AIzaSyCi7usXox721fWVLvSMBwOLf9OnQkIofAI",
   authDomain: "student-app-c6abf.firebaseapp.com",
@@ -12,11 +10,8 @@ firebase.initializeApp({
   appId: "1:896987976968:web:b9ab97e1ae698aff0688bd",
   measurementId: "G-BKHGSWQ3CN"
 });
-
-// Initialize Firebase Cloud Messaging
 const messaging = firebase.messaging();
 
-// Handle background push messages
 messaging.onBackgroundMessage(payload => {
   console.log("[firebase-messaging-sw.js] Received background message:", payload);
 
@@ -29,7 +24,6 @@ messaging.onBackgroundMessage(payload => {
   });
 });
 
-// Handle notification clicks
 self.addEventListener('notificationclick', event => {
   event.notification.close();
   event.waitUntil(
